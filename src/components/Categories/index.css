@@ -1,0 +1,22 @@
+.menu-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  margin: 0px;
+}
+.menu-heading {
+  font-family: 'Roboto';
+  font-size: 15px;
+  width: 150px;
+  text-align: center;
+  color: rebeccapurple;
+  background-color: transparent;
+  border: 0px;
+  min-height: 60px;
+  margin: 0px;
+}
+.active {
+  color: red;
+  border-bottom: 1px red solid;
+}
