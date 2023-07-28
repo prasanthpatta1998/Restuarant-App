@@ -23,8 +23,10 @@ const DishDetails = props => {
   }
 
   const itemRemoved = () => {
-    setValue(countValue - 1)
-    itemRemovedInCart(dishId)
+    if (countValue > 0) {
+      setValue(countValue - 1)
+      itemRemovedInCart(dishId)
+    }
   }
 
   const addCon = addonCat.length > 0 ? 'green' : 'red'

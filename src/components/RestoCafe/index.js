@@ -83,28 +83,11 @@ class RestoCafe extends Component {
   }
 
   itemAddedInCart = dishId => {
-    const {cartItems, count} = this.state
-    if (cartItems.includes(dishId)) {
-      return this.setState({count})
-    }
-    const cartItemsList = [...cartItems, dishId]
-    return this.setState(prevState => ({
-      count: prevState.count + 1,
-      cartItems: cartItemsList,
-    }))
+    this.setState(prevState => ({count: prevState.count + 1}))
   }
 
   itemRemovedInCart = dishId => {
-    const {cartItems, count} = this.state
-    console.log(cartItems.includes(dishId))
-    if (cartItems.includes(dishId)) {
-      const cartItemsList = cartItems.filter(eachCart => eachCart !== dishId)
-      return this.setState(prevState => ({
-        count: prevState.count - 1,
-        cartItems: cartItemsList,
-      }))
-    }
-    return this.setState({count})
+    this.setState(prevState => ({count: prevState.count - 1}))
   }
 
   renderLoader = () => (
