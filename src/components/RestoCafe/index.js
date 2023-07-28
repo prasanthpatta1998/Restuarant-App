@@ -18,6 +18,7 @@ class RestoCafe extends Component {
     categoryDishesId: '',
     categoriesList: [],
     count: 0,
+    cartItems: [],
   }
 
   componentDidMount() {
@@ -56,6 +57,7 @@ class RestoCafe extends Component {
           })),
         },
       ]
+      console.log(apiData)
 
       this.setState({
         restaurantData: apiData,
@@ -77,16 +79,32 @@ class RestoCafe extends Component {
     const newList = categoriesList.filter(
       each => each.menuCategoryId === categoryDishesId,
     )
-    console.log(newList[0])
     return newList[0]
   }
 
-  itemAddedInCart = () => {
-    this.setState(prevState => ({count: prevState.count + 1}))
+  itemAddedInCart = dishId => {
+    const {cartItems, count} = this.state
+    if (cartItems.includes(dishId)) {
+      return this.setState({count})
+    }
+    const cartItemsList = [...cartItems, dishId]
+    return this.setState(prevState => ({
+      count: prevState.count + 1,
+      cartItems: cartItemsList,
+    }))
   }
 
-  itemRemovedInCart = () => {
-    this.setState(prevState => ({count: prevState.count - 1}))
+  itemRemovedInCart = dishId => {
+    const {cartItems, count} = this.state
+    console.log(cartItems.includes(dishId))
+    if (cartItems.includes(dishId)) {
+      const cartItemsList = cartItems.filter(eachCart => eachCart !== dishId)
+      return this.setState(prevState => ({
+        count: prevState.count - 1,
+        cartItems: cartItemsList,
+      }))
+    }
+    return this.setState({count})
   }
 
   renderLoader = () => (

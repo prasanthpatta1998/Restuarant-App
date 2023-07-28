@@ -15,14 +15,14 @@
 }
 
 .dish-container {
-  width: 219px;
+  width: 130px;
 }
 
 .dish-heading {
   margin: 0px;
   font-family: 'Roboto';
   font-size: 16px;
-  color: grey;
+  color: black;
 }
 
 .dish-currency-container {
@@ -35,20 +35,20 @@
   margin: 0px;
   font-family: 'Roboto';
   font-size: 12px;
-  color: grey;
+  color: #413737;
 }
 
 .dish-calories {
   margin: 0px;
   font-family: 'Roboto';
   font-size: 12px;
-  color: grey;
+  color: hsl(39deg 87.13% 58.33%);
 }
 
 .dish-description {
   margin: 0px;
   font-family: 'Roboto';
-  font-size: 12px;
+  font-size: 10px;
   color: grey;
   margin-top: 6px;
 }
@@ -91,6 +91,80 @@
 }
 
 .dish-image {
-  height: 60px;
-  width: 60px;
+  height: 90px;
+  width: 90px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.green {
+  color: green;
+  border: 1px green solid;
+  height: 22px;
+  width: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red {
+  color: red;
+  border: 1px red solid;
+  height: 22px;
+  width: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  height: 15px;
+  width: 15px;
+}
+.dish-calories-container {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 866px) {
+  .dish-heading {
+    font-size: 20px;
+  }
+  .dish-container {
+    width: 562px;
+  }
+  .dish-price {
+    font-size: 14px;
+  }
+  .dish-calories {
+    font-size: 15px;
+  }
+  .dish-description {
+    font-size: 13px;
+  }
+  .dish-image {
+    height: 115px;
+    width: 115px;
+  }
+}
+
+@media (min-width: 960px) {
+  .dish-heading {
+    font-size: 20px;
+  }
+  .dish-container {
+    width: 700px;
+  }
+  .dish-price {
+    font-size: 14px;
+  }
+  .dish-calories {
+    font-size: 15px;
+  }
+  .dish-description {
+    font-size: 13px;
+  }
+  .dish-image {
+    height: 115px;
+    width: 115px;
+  }
 }
