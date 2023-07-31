@@ -18,7 +18,6 @@ class RestoCafe extends Component {
     categoryDishesId: '',
     categoriesList: [],
     count: 0,
-    cartItems: [],
   }
 
   componentDidMount() {
@@ -26,7 +25,6 @@ class RestoCafe extends Component {
   }
 
   getRestaurantData = async () => {
-    const {categoryDishesId} = this.state
     this.setState({restaurantState: applicationState.inProgress})
     const url = 'https://run.mocky.io/v3/a67edc87-49c7-4822-9cb4-e2ef94cb3099'
     const response = await fetch(url)
@@ -82,11 +80,11 @@ class RestoCafe extends Component {
     return newList[0]
   }
 
-  itemAddedInCart = dishId => {
+  itemAddedInCart = () => {
     this.setState(prevState => ({count: prevState.count + 1}))
   }
 
-  itemRemovedInCart = dishId => {
+  itemRemovedInCart = () => {
     this.setState(prevState => ({count: prevState.count - 1}))
   }
 
